@@ -16,13 +16,13 @@ function App() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/products", formData);
+    await axios.post("https://zenzop-interview-backend.vercel.app/api/products", formData);
     setformData({ name: "", description: "", price: "" });
     fetchProducts();
   };
 
   const fetchProducts = async () => {
-    const res = await axios.get("http://localhost:5000/api/products");
+    const res = await axios.get("https://zenzop-interview-backend.vercel.app/api/products");
     setProducts(res.data);
   };
 
